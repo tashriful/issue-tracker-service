@@ -1,0 +1,47 @@
+server:
+  port: 9090
+  servlet:
+    context-path: /AYEIssue
+
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://AYE:aye@192.168.0.133:27017
+      database: ISSUE_TRACKER
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 200MB
+      max-request-size: 200MB
+
+  security:
+    user:
+      password: user
+
+  mvc:
+    log-request-details: true
+
+
+
+app:
+  jwt:
+    secret: 9pThdQ0V6s1g9Ut2/TQbbB5CymCl7VZXA9l0VYosoyc=
+    #    expirationTime: 600000000
+    expirationTime: 1800000
+
+debug: false
+
+logging:
+  level:
+    org.springframework.web: INFO
+    org.springframework.data.mongodb.core.MongoTemplate: INFO
+    org.mongodb.driver.protocol.command: INFO
+    org.mongodb.driver.cluster: INFO
+    org.mongodb.driver.connection: INFO
+

@@ -1,0 +1,30 @@
+package com.aye.web.service;
+
+import com.aye.web.exception.InvalidRequestDataException;
+import com.aye.issuetrackerdto.entityDto.EmployeeDto;
+
+import java.util.List;
+
+public interface EmployeeService {
+
+
+    EmployeeDto getEmployeeById(Long id);
+
+    EmployeeDto createEmployee(EmployeeDto employeeDto) throws InvalidRequestDataException;
+
+    EmployeeDto updateEmployee(Long id, EmployeeDto employeeDto);
+
+    boolean deleteEmployee(Long id);
+
+    List<EmployeeDto> getAllEmployee();
+
+    EmployeeDto getTeamHead(Long teamId, Boolean isTeamHead);
+
+    EmployeeDto getDepartmentHead(Long departmentId, boolean isDeptHead);
+
+    List<EmployeeDto> getEmployeeByDept(Long id);
+
+    EmployeeDto getEmployeeByUser(Long createdByUserId);
+
+    EmployeeDto getEmployeesByUserName(String username);
+}

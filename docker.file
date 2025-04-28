@@ -1,0 +1,4 @@
+FROM openjdk:17
+MAINTAINER aye.com
+COPY aye-issue-tracker-service-0.0.1-SNAPSHOT.jar aye-issuetracker-service.jar
+ENTRYPOINT ["java","-jar","aye-issuetracker-service.jar"]
